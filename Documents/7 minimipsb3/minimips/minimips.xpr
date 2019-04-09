@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2014.4 (64-bit)              -->
+<!--                                                         -->
+<!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
+
+<Project Version="7" Minor="2" Path="F:/minimipsb3/minimips/minimips.xpr">
+  <DefaultLaunch Dir="$PRUNDIR"/>
+  <Configuration>
+    <Option Name="Id" Val="3fa369ae4a2442b9b7a5595ff6abb10e"/>
+    <Option Name="Part" Val="xc7a35tcpg236-1"/>
+    <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
+    <Option Name="BoardPart" Val=""/>
+    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="DefaultLib" Val="xil_defaultlib"/>
+  </Configuration>
+  <FileSets Version="1" Minor="31">
+    <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/src/defines.v">
+        <FileInfo RelPath="defines.v" SFType="VHeader">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/defines.v"/>
+          <Attr Name="ImportTime" Val="1553670842"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/ID.v">
+        <FileInfo RelPath="ID.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/ID.v"/>
+          <Attr Name="ImportTime" Val="1553690928"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/MEM_WB.v">
+        <FileInfo RelPath="MEM_WB.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/MEM_WB.v"/>
+          <Attr Name="ImportTime" Val="1553678137"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/EX.v">
+        <FileInfo RelPath="EX.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/EX.v"/>
+          <Attr Name="ImportTime" Val="1553674880"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/EX_MEM.v">
+        <FileInfo RelPath="EX_MEM.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/EX_MEM.v"/>
+          <Attr Name="ImportTime" Val="1553677784"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/ID_EX.v">
+        <FileInfo RelPath="ID_EX.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/ID_EX.v"/>
+          <Attr Name="ImportTime" Val="1553690322"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/RegFile.v">
+        <FileInfo RelPath="RegFile.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/RegFile.v"/>
+          <Attr Name="ImportTime" Val="1553684480"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/PC.v">
+        <FileInfo RelPath="PC.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/PC.v"/>
+          <Attr Name="ImportTime" Val="1553690111"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/IF_ID.v">
+        <FileInfo RelPath="IF_ID.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/IF_ID.v"/>
+          <Attr Name="ImportTime" Val="1553690141"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/MEM.V">
+        <FileInfo RelPath="MEM.V">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/WB.v">
+        <FileInfo RelPath="WB.v">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/miniMIPS_Top.v">
+        <FileInfo RelPath="miniMIPS_Top.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/miniMIPS_Top.v"/>
+          <Attr Name="ImportTime" Val="1553690952"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/confreg.v">
+        <FileInfo RelPath="confreg.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/confreg.v"/>
+          <Attr Name="ImportTime" Val="1553681791"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/Basys3_Top.v">
+        <FileInfo RelPath="Basys3_Top.v">
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sources_1/src/Basys3_Top.v"/>
+          <Attr Name="ImportTime" Val="1553680470"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../romnew.coe">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="Basys3_Top"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+      <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/Basys-3.xdc"/>
+          <Attr Name="ImportTime" Val="1553673589"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc"/>
+        <Option Name="ConstrsType" Val="XDC"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/imports/new/simu.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../miniMIPS_B3.srcs/sim_1/new/simu.v"/>
+          <Attr Name="ImportTime" Val="1553677676"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/src/defines.v">
+        <FileInfo SFType="VHeader">
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="simu"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="irom" Type="BlockSrcs" RelSrcDir="$PSRCDIR/irom">
+      <File Path="$PSRCDIR/sources_1/ip/irom/irom.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom_funcsim.vhdl"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom.dcp"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom_funcsim.v"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom_stub.v"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="f:/minimipsb3/romnew.coe"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom.xml"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="dist_mem_gen_v8_0/hdl/dist_mem_gen_v8_0.vhd"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="dist_mem_gen_v8_0/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="synth/irom.vhd"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="dist_mem_gen_v8_0/hdl/dist_mem_gen_v8_0_vl_rfs.v"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom.veo"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="sim/irom.v"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="doc/dist_mem_gen_v8_0_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom.mif"/>
+        <CompFileExtendedInfo CompFileName="irom.xci" FileRelPathName="irom_ooc.xdc"/>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="irom"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+  </FileSets>
+  <Simulators>
+    <Simulator Name="XSim">
+      <Option Name="Description" Val="Vivado Simulator"/>
+      <Option Name="CompiledLib" Val="0"/>
+    </Simulator>
+    <Simulator Name="ModelSim">
+      <Option Name="Description" Val="QuestaSim/ModelSim Simulator"/>
+    </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
+  </Simulators>
+  <Runs Version="1" Minor="9">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="irom_synth_1" Type="Ft3:Synth" SrcSet="irom" Part="xc7a35tcpg236-1" ConstrsSet="irom" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/irom_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream">
+          <Option Id="BinFile">1</Option>
+        </Step>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="irom_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="irom" Description="Vivado Implementation Defaults" SynthRun="irom_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+  </Runs>
+  <HWSession Dir="hw_1" File="hw.xml"/>
+</Project>
