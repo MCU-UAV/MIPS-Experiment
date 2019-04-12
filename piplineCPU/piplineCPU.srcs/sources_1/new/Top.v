@@ -1,57 +1,43 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2019/04/09 09:21:22
-// Design Name: 
-// Module Name: Top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
-module Top(
-    input  wire  clk,//时钟信号
-    input  wire  reset,//复位信号
-    input  wire [15: 0] switch,//开关信号
-    input  wire [ 3: 0] keys,//按键信号
-    output wire [15: 0] led,//led信号
+module Basys3_Top
+(
+    input  wire  clk,
+    input  wire  reset,
+    input  wire [15: 0] switch,
+    input  wire [ 3: 0] keys,
+    output wire [15: 0] led,
     output wire [ 7: 0] ca,
     output wire [ 3: 0] an
-    );
-    wire [31: 0] inst_addr;//指令存储器地址总线
-    wire [31: 0] inst_data;//指令存储器数据总线
-    wire         data_wen;//数据存储器写允许信号
-    wire [31: 0] data_addr;//数据存储器地址总线
-    wire [31: 0] data_dout;//数据存储器数据出总线
-    wire [31: 0] data_din;//数据存储器数据入总线
-    miniMIPSCPU cpu //CPU模块
+);
+
+    wire [31: 0] inst_addr;
+    wire [31: 0] inst_data;
+
+    wire         data_wen;
+    wire [31: 0] data_addr;
+    wire [31: 0] data_dout;
+    wire [31: 0] data_din;
+
+   mycpu_top cpu
     (
-        .clk(clk),
-        .resetn(reset),
-        .inst_sram_addr(inst_addr),
-        .inst_sram_rdata(inst_data),
-        .data_sram_wen(data_wen),
-        .data_sram_addr(data_addr),
-        .data_sram_wdata(data_dout),
-        .data_sram_rdata(data_din)
+        .clk        ( clk           ),
+        .resetn        ( reset         ),
+        .inst_sram_addr  ( inst_addr     ),
+        .inst_sram_rdata  ( inst_data     ),
+        .data_sram_wen   ( data_wen      ),
+        .data_sram_addr  ( data_addr     ),
+        .data_sram_wdata  ( data_dout     ),
+        .data_sram_rdata   ( data_din      )
     );
-    inst_rom irom //指令存储器ROM模块
+
+    inst_rom irom
     (
         .a      ( inst_addr [11:2]  ),
         .spo    ( inst_data         )
     );
-    confreg ram //主存RAM模块
+
+    confreg ram
     (
         .clk        ( clk           ),
         .rst        ( reset         ),
@@ -65,5 +51,5 @@ module Top(
         .ca         ( ca            ),
         .an         ( an            )
     );
-    
+
 endmodule
