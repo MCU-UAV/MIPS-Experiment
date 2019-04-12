@@ -1,0 +1,481 @@
+#-----------------------------------------------------------
+# Vivado v2014.4 (64-bit)
+# SW Build 1071353 on Tue Nov 18 18:29:27 MST 2014
+# IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
+# Start of session at: Sat Mar 30 11:54:20 2019
+# Process ID: 14256
+# Log file: E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/synth_1/Basys3_Top.vds
+# Journal file: E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Basys3_Top.tcl
+# set_param gui.test TreeTableDev
+# set_param xicom.use_bs_reader 1
+# debug::add_scope template.lib 1
+# set_msg_config -id {HDL 9-1061} -limit 100000
+# set_msg_config -id {HDL 9-1654} -limit 100000
+# create_project -in_memory -part xc7a35tcpg236-1
+# set_param project.compositeFile.enableAutoGeneration 0
+# set_param synth.vivado.isSynthRun true
+# set_property webtalk.parent_dir E:/pipelinecpu/pipelinecpu/pipelinecpu.cache/wt [current_project]
+# set_property parent.project_path E:/pipelinecpu/pipelinecpu/pipelinecpu.xpr [current_project]
+# set_property default_lib xil_defaultlib [current_project]
+# set_property target_language Verilog [current_project]
+# add_files e:/pipelinecpu/romnew.coe
+# add_files -quiet E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/inst_rom_synth_1/inst_rom.dcp
+# set_property used_in_implementation false [get_files E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/inst_rom_synth_1/inst_rom.dcp]
+# read_verilog -library xil_defaultlib {
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/regfile.v
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/decoder.v
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/alu.v
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/mycpu_top.v
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v
+#   E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/Basys3_Top.v
+# }
+# read_xdc E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/constrs_1/imports/pipelinecpu/Basys-3.xdc
+# set_property used_in_implementation false [get_files E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/constrs_1/imports/pipelinecpu/Basys-3.xdc]
+# catch { write_hwdef -file Basys3_Top.hwdef }
+INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
+# synth_design -top Basys3_Top -part xc7a35tcpg236-1
+Command: synth_design -top Basys3_Top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 239.086 ; gain = 80.543
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Basys3_Top' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/Basys3_Top.v:3]
+INFO: [Synth 8-638] synthesizing module 'mycpu_top' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/mycpu_top.v:1]
+INFO: [Synth 8-638] synthesizing module 'decoder_6_64' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/decoder.v:14]
+INFO: [Synth 8-256] done synthesizing module 'decoder_6_64' (1#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/decoder.v:14]
+INFO: [Synth 8-638] synthesizing module 'decoder_5_32' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/decoder.v:1]
+INFO: [Synth 8-256] done synthesizing module 'decoder_5_32' (2#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/decoder.v:1]
+INFO: [Synth 8-638] synthesizing module 'regfile' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/regfile.v:1]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (3#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/regfile.v:1]
+INFO: [Synth 8-638] synthesizing module 'alu' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/alu.v:1]
+INFO: [Synth 8-256] done synthesizing module 'alu' (4#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/alu.v:1]
+INFO: [Synth 8-256] done synthesizing module 'mycpu_top' (5#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/mycpu_top.v:1]
+WARNING: [Synth 8-689] width (1) of port connection 'data_sram_wen' does not match port width (4) of module 'mycpu_top' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/Basys3_Top.v:28]
+WARNING: [Synth 8-350] instance 'cpu' of module 'mycpu_top' requires 16 connections, but only 8 given [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/Basys3_Top.v:22]
+INFO: [Synth 8-638] synthesizing module 'inst_rom' [E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/synth_1/.Xil/Vivado-14256-DESKTOP-BRS6M9C/realtime/inst_rom_stub.v:7]
+INFO: [Synth 8-256] done synthesizing module 'inst_rom' (6#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.runs/synth_1/.Xil/Vivado-14256-DESKTOP-BRS6M9C/realtime/inst_rom_stub.v:7]
+INFO: [Synth 8-638] synthesizing module 'confreg' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v:21]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v:39]
+INFO: [Synth 8-256] done synthesizing module 'confreg' (7#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v:2]
+INFO: [Synth 8-256] done synthesizing module 'Basys3_Top' (8#1) [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/Basys3_Top.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 273.383 ; gain = 114.840
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 273.383 ; gain = 114.840
+---------------------------------------------------------------------------------
+Loading clock regions from G:/Xilinx/Vivado/2014.4/data\parts/xilinx/artix7/artix7/xc7a35t/ClockRegion.xml
+Loading clock buffers from G:/Xilinx/Vivado/2014.4/data\parts/xilinx/artix7/artix7/xc7a35t/ClockBuffers.xml
+Loading clock placement rules from G:/Xilinx/Vivado/2014.4/data/parts/xilinx/artix7/ClockPlacerRules.xml
+Loading package pin functions from G:/Xilinx/Vivado/2014.4/data\parts/xilinx/artix7/PinFunctions.xml...
+Loading package from G:/Xilinx/Vivado/2014.4/data\parts/xilinx/artix7/artix7/xc7a35t/cpg236/Package.xml
+Loading io standards from G:/Xilinx/Vivado/2014.4/data\./parts/xilinx/artix7/IOStandards.xml
+Loading device configuration modes from G:/Xilinx/Vivado/2014.4/data\parts/xilinx/artix7/ConfigModes.xml
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/constrs_1/imports/pipelinecpu/Basys-3.xdc]
+Finished Parsing XDC File [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/constrs_1/imports/pipelinecpu/Basys-3.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 577.027 ; gain = 0.016
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'es_src2_is_8_reg' into 'es_src1_is_pc_reg' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/mycpu_top.v:323]
+INFO: [Synth 8-4471] merging register 'es_res_from_mem_reg' into 'es_is_load_op_reg' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/mycpu_top.v:324]
+ROM "data_din" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
+ROM "led" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
+ROM "num" won't be mapped to Block RAM because address size (4) smaller than threshold (5) 
+WARNING: [Synth 8-327] inferring latch for variable 'data_din_reg' [E:/pipelinecpu/pipelinecpu/pipelinecpu.srcs/sources_1/imports/src/confreg.v:22]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 9     
+	               16 Bit    Registers := 3     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 18    
+	   4 Input     32 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Basys3_Top 
+Detailed RTL Component Info : 
+Module decoder_6_64 
+Detailed RTL Component Info : 
+Module decoder_5_32 
+Detailed RTL Component Info : 
+Module regfile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mycpu_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 9     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 3     
+	                1 Bit    Registers := 15    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	   2 Input      5 Bit        Muxes := 1     
+Module confreg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
+	  16 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 577.027 ; gain = 418.484
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: 
++------------+----------------------+--------------------+----------------------+---------------+-------------------+
+|Module Name | RTL Object           | Inference Criteria | Size (depth X width) | Primitives    | Hierarchical Name | 
++------------+----------------------+--------------------+----------------------+---------------+-------------------+
+|Basys3_Top  | cpu/u_regfile/rf_reg | Implied            | 32 X 32              | RAM32M x 12   | Basys3_Top/ram__2 | 
++------------+----------------------+--------------------+----------------------+---------------+-------------------+
+
+Note: The table shows RAMs generated at current stage. Some RAM generation could be reversed due to later optimizations. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the hierarchical modules names of the RAM and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[31] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[30] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[29] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[28] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[27] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[26] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[25] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[24] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[23] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[22] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[21] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[20] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[19] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[18] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[17] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[16] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[15] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[14] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[13] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[12] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[11] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[10] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[9] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[8] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[7] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[6] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[5] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[4] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[3] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[2] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[1] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ms_pc_reg[0] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[31] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[30] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[29] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[28] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[27] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[26] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[25] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[24] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[23] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[22] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[21] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[20] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[19] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[18] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[17] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[16] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[15] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[14] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[13] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[12] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[11] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[10] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[9] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[8] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[7] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[6] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[5] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[4] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[3] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[2] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[1] ) is unused and will be removed from module Basys3_Top.
+WARNING: [Synth 8-3332] Sequential element (\cpu/ws_pc_reg[0] ) is unused and will be removed from module Basys3_Top.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.027 ; gain = 418.484
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 577.027 ; gain = 418.484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |inst_rom      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |inst_rom |     1|
+|2     |BUFG     |     2|
+|3     |CARRY4   |    47|
+|4     |LUT1     |    45|
+|5     |LUT2     |    54|
+|6     |LUT3     |   155|
+|7     |LUT4     |   159|
+|8     |LUT5     |   141|
+|9     |LUT6     |   376|
+|10    |RAM32M   |    12|
+|11    |FDCE     |    76|
+|12    |FDPE     |     4|
+|13    |FDRE     |   281|
+|14    |FDSE     |    33|
+|15    |LD       |    32|
+|16    |IBUF     |    22|
+|17    |OBUF     |    28|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------+----------+------+
+|      |Instance      |Module    |Cells |
++------+--------------+----------+------+
+|1     |top           |          |  1499|
+|2     |  cpu         |mycpu_top |  1217|
+|3     |    u_alu     |alu       |   366|
+|4     |    u_regfile |regfile   |   113|
+|5     |  ram         |confreg   |   198|
++------+--------------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 65 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:26 . Memory (MB): peak = 577.207 ; gain = 77.324
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 577.207 ; gain = 418.664
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 113 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 44 instances were transformed.
+  LD => LDCE: 32 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+32 Infos, 67 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 577.207 ; gain = 386.012
+# write_checkpoint -noxdef Basys3_Top.dcp
+# catch { report_utilization -file Basys3_Top_utilization_synth.rpt -pb Basys3_Top_utilization_synth.pb }
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 577.207 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 30 11:54:56 2019...
