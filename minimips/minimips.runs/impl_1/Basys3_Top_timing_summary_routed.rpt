@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri Apr 12 10:55:44 2019
+| Date         : Tue Apr 23 10:56:52 2019
 | Host         : DESKTOP-MKHGP38 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Basys3_Top_timing_summary_routed.rpt -pb Basys3_Top_timing_summary_routed.pb -rpx Basys3_Top_timing_summary_routed.rpx -warn_on_violation
 | Design       : Basys3_Top
@@ -873,7 +873,7 @@ Min Delay Paths
 Slack (MET) :             0.246ns  (arrival time - required time)
   Source:                 ram/timer_reg[17]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            ram/an_reg[3]/D
+  Destination:            ram/an_reg[2]/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -897,11 +897,11 @@ Slack (MET) :             0.246ns  (arrival time - required time)
                          net (fo=26, routed)          0.585     1.468    ram/CLK
     SLICE_X64Y27         FDCE                                         r  ram/timer_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 r  ram/timer_reg[17]/Q
+    SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 f  ram/timer_reg[17]/Q
                          net (fo=5, routed)           0.157     1.789    ram/timer_reg[20]_0[0]
-    SLICE_X65Y27         LUT2 (Prop_lut2_I0_O)        0.045     1.834 r  ram/an[3]_i_1/O
-                         net (fo=1, routed)           0.000     1.834    ram/an[3]_i_1_n_1
-    SLICE_X65Y27         FDPE                                         r  ram/an_reg[3]/D
+    SLICE_X65Y27         LUT2 (Prop_lut2_I1_O)        0.045     1.834 r  ram/an[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.834    ram/an[2]_i_1_n_1
+    SLICE_X65Y27         FDPE                                         r  ram/an_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -912,9 +912,9 @@ Slack (MET) :             0.246ns  (arrival time - required time)
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
                          net (fo=26, routed)          0.853     1.980    ram/CLK
-    SLICE_X65Y27         FDPE                                         r  ram/an_reg[3]/C
+    SLICE_X65Y27         FDPE                                         r  ram/an_reg[2]/C
                          clock pessimism             -0.499     1.481    
-    SLICE_X65Y27         FDPE (Hold_fdpe_C_D)         0.107     1.588    ram/an_reg[3]
+    SLICE_X65Y27         FDPE (Hold_fdpe_C_D)         0.107     1.588    ram/an_reg[2]
   -------------------------------------------------------------------
                          required time                         -1.588    
                          arrival time                           1.834    
@@ -924,7 +924,7 @@ Slack (MET) :             0.246ns  (arrival time - required time)
 Slack (MET) :             0.247ns  (arrival time - required time)
   Source:                 ram/timer_reg[17]/C
                             (rising edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            ram/an_reg[2]/D
+  Destination:            ram/an_reg[3]/D
                             (rising edge-triggered cell FDPE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
@@ -948,11 +948,11 @@ Slack (MET) :             0.247ns  (arrival time - required time)
                          net (fo=26, routed)          0.585     1.468    ram/CLK
     SLICE_X64Y27         FDCE                                         r  ram/timer_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 f  ram/timer_reg[17]/Q
+    SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 r  ram/timer_reg[17]/Q
                          net (fo=5, routed)           0.157     1.789    ram/timer_reg[20]_0[0]
-    SLICE_X65Y27         LUT2 (Prop_lut2_I1_O)        0.046     1.835 r  ram/an[2]_i_1/O
-                         net (fo=1, routed)           0.000     1.835    ram/an[2]_i_1_n_1
-    SLICE_X65Y27         FDPE                                         r  ram/an_reg[2]/D
+    SLICE_X65Y27         LUT2 (Prop_lut2_I0_O)        0.046     1.835 r  ram/an[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.835    ram/an[3]_i_1_n_1
+    SLICE_X65Y27         FDPE                                         r  ram/an_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -963,9 +963,9 @@ Slack (MET) :             0.247ns  (arrival time - required time)
                          net (fo=1, routed)           0.685     1.099    clk_IBUF
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  clk_IBUF_BUFG_inst/O
                          net (fo=26, routed)          0.853     1.980    ram/CLK
-    SLICE_X65Y27         FDPE                                         r  ram/an_reg[2]/C
+    SLICE_X65Y27         FDPE                                         r  ram/an_reg[3]/C
                          clock pessimism             -0.499     1.481    
-    SLICE_X65Y27         FDPE (Hold_fdpe_C_D)         0.107     1.588    ram/an_reg[2]
+    SLICE_X65Y27         FDPE (Hold_fdpe_C_D)         0.107     1.588    ram/an_reg[3]
   -------------------------------------------------------------------
                          required time                         -1.588    
                          arrival time                           1.835    
@@ -1000,7 +1000,7 @@ Slack (MET) :             0.254ns  (arrival time - required time)
     SLICE_X64Y26         FDCE                                         r  ram/timer_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y26         FDCE (Prop_fdce_C_Q)         0.164     1.630 r  ram/timer_reg[14]/Q
-                         net (fo=1, routed)           0.114     1.745    cpu/ex_mem/wb_m_din_reg[16][1]
+                         net (fo=1, routed)           0.114     1.745    cpu/ex_mem/timer_reg[19]_0[1]
     SLICE_X64Y26         CARRY4 (Prop_carry4_S[2]_O[2])
                                                       0.110     1.855 r  cpu/ex_mem/timer_reg[12]_i_1/O[2]
                          net (fo=1, routed)           0.000     1.855    ram/timer_reg[15]_0[2]
@@ -1206,7 +1206,7 @@ Slack (MET) :             0.267ns  (arrival time - required time)
     SLICE_X64Y27         FDCE                                         r  ram/timer_reg[18]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 r  ram/timer_reg[18]/Q
-                         net (fo=5, routed)           0.127     1.759    cpu/ex_mem/wb_m_din_reg[20][1]
+                         net (fo=5, routed)           0.127     1.759    cpu/ex_mem/timer_reg[23]_0[1]
     SLICE_X64Y27         CARRY4 (Prop_carry4_S[2]_O[2])
                                                       0.110     1.869 r  cpu/ex_mem/timer_reg[16]_i_1/O[2]
                          net (fo=1, routed)           0.000     1.869    ram/timer_reg[19]_0[2]
@@ -1258,7 +1258,7 @@ Slack (MET) :             0.290ns  (arrival time - required time)
     SLICE_X64Y26         FDCE                                         r  ram/timer_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y26         FDCE (Prop_fdce_C_Q)         0.164     1.630 r  ram/timer_reg[14]/Q
-                         net (fo=1, routed)           0.114     1.745    cpu/ex_mem/wb_m_din_reg[16][1]
+                         net (fo=1, routed)           0.114     1.745    cpu/ex_mem/timer_reg[19]_0[1]
     SLICE_X64Y26         CARRY4 (Prop_carry4_S[2]_O[3])
                                                       0.146     1.891 r  cpu/ex_mem/timer_reg[12]_i_1/O[3]
                          net (fo=1, routed)           0.000     1.891    ram/timer_reg[15]_0[3]
@@ -1362,7 +1362,7 @@ Slack (MET) :             0.303ns  (arrival time - required time)
     SLICE_X64Y27         FDCE                                         r  ram/timer_reg[18]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X64Y27         FDCE (Prop_fdce_C_Q)         0.164     1.632 r  ram/timer_reg[18]/Q
-                         net (fo=5, routed)           0.127     1.759    cpu/ex_mem/wb_m_din_reg[20][1]
+                         net (fo=5, routed)           0.127     1.759    cpu/ex_mem/timer_reg[23]_0[1]
     SLICE_X64Y27         CARRY4 (Prop_carry4_S[2]_O[3])
                                                       0.146     1.905 r  cpu/ex_mem/timer_reg[16]_i_1/O[3]
                          net (fo=1, routed)           0.000     1.905    ram/timer_reg[19]_0[3]

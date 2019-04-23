@@ -72,7 +72,7 @@ set rc [catch {
   set_property parent.project_path D:/code/MIPS-Experiment/minimips/minimips.xpr [current_project]
   set_property ip_cache_permissions disable [current_project]
   add_files -quiet D:/code/MIPS-Experiment/minimips/minimips.runs/synth_1/Basys3_Top.dcp
-  read_ip -quiet d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
+  read_ip -quiet D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
   read_xdc D:/code/MIPS-Experiment/minimips/minimips.srcs/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc
   link_design -top Basys3_Top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

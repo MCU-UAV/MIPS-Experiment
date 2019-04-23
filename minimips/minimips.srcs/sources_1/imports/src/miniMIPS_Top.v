@@ -139,9 +139,9 @@ module miniMIPS_Top
         .r1data     ( r1data     ),
         .r2addr     ( r2addr     ),
         .r2data     ( r2data     ),
-        .wreg       ( wb_wreg_o  ),
-        .wraddr     ( wb_wraddr_o), 
-        .wrdata     ( wb_wrdata  )
+        .wen       ( wb_wreg_o  ),
+        .waddr     ( wb_wraddr_o), 
+        .wdata     ( wb_wrdata  )
     );
 
     //ID_EX

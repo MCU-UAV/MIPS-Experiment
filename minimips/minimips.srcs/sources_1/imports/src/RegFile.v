@@ -13,37 +13,53 @@
 // Additional Comments:
 // 
 //------------------------------------------------------------------------------
+`include "defines.v"
 module RegFile
 (
     input  wire         clk,
     input  wire         rst,
     // read section
     input  wire [ 4: 0] r1addr,
-    output wire [31: 0] r1data,
+    output reg [31: 0] r1data,
     input  wire [ 4: 0] r2addr,
-    output wire [31: 0] r2data,
+    output reg [31: 0] r2data,
     // write section
-    input  wire         wreg,       // write enable
-    input  wire [ 4: 0] wraddr,     // write address
-    input  wire [31: 0] wrdata      // write data
+    input  wire         wen,       // write enable
+    input  wire [ 4: 0] waddr,     // write address
+    input  wire [31: 0] wdata      // write data
 );
-
     reg  [31: 0] GPR [31: 0]; // General-Purpose Registers
 
     integer i;
-    initial begin
+    initial begin//系统运行之初对寄存器清零
         for (i = 0; i < 32; i = i + 1)
             GPR[i] = 32'b0;
     end
 
-    always @(posedge clk) begin
+    always @(posedge clk) begin//写端口逻辑
         if(!rst) begin
-            if(wreg) GPR[wraddr] <= wrdata;
+            if(wen) GPR[waddr] <= wdata;
         end
     end
-
-    assign r1data = r1addr == 5'b0 ? 32'b0 : GPR[r1addr];
-    assign r2data = r2addr == 5'b0 ? 32'b0 : GPR[r2addr];
+    
+    always @(*)begin
+        if(rst== 1'b0) begin    //复位状态只能读出0
+            r1data<=32'b0;
+        end else if(r1addr==5'b0) begin//读0号寄存器只能读出0
+            r1data<=32'b0;
+        end else if((r1addr==waddr)&&wen) begin
+            r1data<=wdata;
+        end else r1data<=GPR[r1addr];
+    end
+    
+    always @(*)begin
+        if(rst== 1'b0) begin    //复位状态只能读出0
+            r2data<=32'b0;
+        end else if(r2addr==5'b0) begin//读0号寄存器只能读出0
+            r2data<=32'b0;
+        end else if((r2addr==waddr)&&wen) begin
+            r2data<=wdata;
+        end else r2data<=GPR[r2addr];
+    end
 
 endmodule
-

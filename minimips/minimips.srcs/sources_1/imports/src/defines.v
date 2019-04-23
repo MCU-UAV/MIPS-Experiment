@@ -54,3 +54,7 @@
 `define         ALU_JAL             4'hC
 `define         ALU_LW              4'hD
 `define         ALU_SW              4'hE
+
+/*------------------Const-----------------------*/
+`define         RstEnable           1'b0
+`define         ZeroWord            32'b0

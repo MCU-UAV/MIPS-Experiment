@@ -46,7 +46,7 @@ read_verilog -library xil_defaultlib {
   D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/miniMIPS_Top.v
   D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/Basys3_Top.v
 }
-read_ip -quiet d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
+read_ip -quiet D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
 set_property used_in_implementation false [get_files -all d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
