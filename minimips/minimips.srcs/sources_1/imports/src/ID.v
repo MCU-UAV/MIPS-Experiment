@@ -20,14 +20,22 @@ module ID
 (
     input  wire [31: 0] pc,         // use to find the Exceptions, you can use it
     input  wire [31: 0] inst,       // instruction
+    
+    input  wire         ex_wreg_i,
+    input  wire [ 4: 0] ex_wd_i,
+    input  wire [31: 0] ex_wdata_i,
+    
+    input  wire         mem_wreg_i,
+    input  wire [ 4: 0] mem_wd_i,
+    input  wire [31: 0] mem_wdata_i,
 
     output reg  [ 4: 0] r1addr,     // default rs
     input  wire [31: 0] r1data,
     output reg  [ 4: 0] r2addr,     // default rt
     input  wire [31: 0] r2data,
 
-    output wire [31: 0] opr1,       // operator 1
-    output wire [31: 0] opr2,       // operator 2
+    output reg [31: 0] opr1,       // operator 1
+    output reg [31: 0] opr2,       // operator 2
     output reg  [ 3: 0] aluop,      // alu type
     output wire [31: 0] offset,
     output reg          wreg,       // reg write enable signal
@@ -55,15 +63,12 @@ module ID
 
     wire [31: 0] pcp4      = pc + 32'd4;
     wire [31: 0] br_target = pcp4 + (sign_ext << 2);
-    
 
     reg  [31: 0] ext_imme;
     reg          r1read;
     reg          r2read;
 
     assign offset = sign_ext;
-    assign opr1 = r1read ? r1data : ext_imme;
-    assign opr2 = r2read ? r2data : ext_imme;
 
     always @(*) begin
         aluop     <= `ALU_NOP;
@@ -298,5 +303,33 @@ module ID
             end
         endcase
     end
+    
+    always @(*) begin
+       if ((r1read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r1addr))begin
+            opr1<=ex_wdata_i;
+       end else if ((r1read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r1addr))begin
+            opr1<=mem_wdata_i;
+       end else if(r1read == 1'b1) begin
+	  	    opr1<= r1data;
+	   end else if(r1read == 1'b0) begin
+	  	    opr1<= ext_imme;
+	   end else begin
+	        opr1= `ZeroWord;
+	   end
+    end
 
+    always @(*) begin
+       if ((r2read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r2addr))begin
+            opr2<=ex_wdata_i;
+       end else if ((r2read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r2addr))begin
+            opr2<=mem_wdata_i;
+       end else if(r2read == 1'b1) begin
+	  	    opr2<= r2data;
+	   end else if(r2read == 1'b0) begin
+	  	    opr2<= ext_imme;
+	   end else begin
+	        opr2= `ZeroWord;
+	   end
+    end
+    
 endmodule
