@@ -11,7 +11,7 @@ vlog -work dist_mem_gen_v8_0_12 -64 -incr \
 "../../../ipstatic/simulation/dist_mem_gen_v8_0.v" \
 
 vlog -work xil_defaultlib -64 -incr \
-"../../../../../../../../../7 minimipsb3/minimips/minimips.srcs/sources_/irom/sim/irom.v" \
+"../../../../minimips.srcs/sources_1/ip/irom/sim/irom.v" \
 
 
 vlog -work xil_defaultlib \

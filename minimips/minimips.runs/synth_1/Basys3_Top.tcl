@@ -23,31 +23,31 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.cache/wt} [current_project]
-set_property parent.project_path {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.xpr} [current_project]
+set_property webtalk.parent_dir D:/code/MIPS-Experiment/minimips/minimips.cache/wt [current_project]
+set_property parent.project_path D:/code/MIPS-Experiment/minimips/minimips.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_cache_permissions disable [current_project]
 add_files {{D:/工作/体系结构/体系结构实验/7 minimipsb3/romnew.coe}}
-read_verilog {{D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/defines.v}}
-set_property file_type "Verilog Header" [get_files {{D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/defines.v}}]
+read_verilog D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/defines.v
+set_property file_type "Verilog Header" [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/defines.v]
 read_verilog -library xil_defaultlib {
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/EX.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/EX_MEM.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/ID.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/ID_EX.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/IF_ID.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/MEM.V}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/MEM_WB.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/PC.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/RegFile.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/WB.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/confreg.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/miniMIPS_Top.v}
-  {D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/sources_1/imports/src/Basys3_Top.v}
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/EX.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/EX_MEM.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/ID.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/ID_EX.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/IF_ID.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/MEM.V
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/MEM_WB.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/PC.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/RegFile.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/WB.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/confreg.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/miniMIPS_Top.v
+  D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/Basys3_Top.v
 }
-read_ip -quiet {{d:/7 minimipsb3/minimips/minimips.srcs/sources_/irom/irom.xci}}
-set_property used_in_implementation false [get_files -all {{d:/7 minimipsb3/minimips/minimips.srcs/sources_/irom/irom_ooc.xdc}}]
+read_ip -quiet d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
+set_property used_in_implementation false [get_files -all d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -57,8 +57,8 @@ set_property used_in_implementation false [get_files -all {{d:/7 minimipsb3/mini
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc}}
-set_property used_in_implementation false [get_files {{D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.srcs/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc}}]
+read_xdc D:/code/MIPS-Experiment/minimips/minimips.srcs/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc
+set_property used_in_implementation false [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/constrs_1/imports/miniMIPS_B3.srcs/Basys-3.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

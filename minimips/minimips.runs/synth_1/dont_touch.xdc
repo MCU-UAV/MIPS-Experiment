@@ -3,7 +3,7 @@
 
 # XDC: imports/miniMIPS_B3.srcs/Basys-3.xdc
 
-# IP: d:/7 minimipsb3/minimips/minimips.srcs/sources_/irom/irom.xci
+# IP: ip/irom/irom.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==irom || ORIG_REF_NAME==irom} -quiet] -quiet
 
-# XDC: d:/7 minimipsb3/minimips/minimips.srcs/sources_/irom/irom_ooc.xdc
+# XDC: ip/irom/irom_ooc.xdc

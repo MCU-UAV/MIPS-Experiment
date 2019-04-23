@@ -2,7 +2,7 @@
   "../../../ipstatic/simulation/dist_mem_gen_v8_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../../../../../../7 minimipsb3/minimips/minimips.srcs/sources_/irom/sim/irom.v" \
+  "../../../../minimips.srcs/sources_1/ip/irom/sim/irom.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

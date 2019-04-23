@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/工作/体系结构/体系结构实验/7 minimipsb3/minimips/minimips.runs/synth_1'
+HD_PWD='D:/code/MIPS-Experiment/minimips/minimips.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
