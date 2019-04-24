@@ -127,7 +127,14 @@ module miniMIPS_Top
         .wreg       ( id_wreg   ),
         .wraddr     ( id_wraddr ),
         .br_flag    ( br_flag   ),
-        .br_addr    ( br_addr   )
+        .br_addr    ( br_addr   ),
+        
+        .ex_wreg_i  ( ex_wreg   ),
+        .ex_wd_i    ( ex_wraddr ),
+        .ex_wdata_i ( ex_alures ),
+        .mem_wreg_i ( mem_wreg_o),
+        .mem_wd_i   ( mem_wraddr_o),
+        .mem_wdata_i( mem_m_din_o)
         // .stallreq
     );
 

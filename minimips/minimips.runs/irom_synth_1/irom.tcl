@@ -30,7 +30,7 @@ set_property parent.project_path D:/code/MIPS-Experiment/minimips/minimips.xpr [
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_cache_permissions disable [current_project]
-read_ip -quiet d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
+read_ip -quiet D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
 set_property used_in_implementation false [get_files -all d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -79,15 +79,15 @@ if { [catch {
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
-add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_stub.v -of_objects [get_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
+add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_stub.v -of_objects [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
 
-add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_stub.vhdl -of_objects [get_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
+add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_stub.vhdl -of_objects [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
 
-add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_sim_netlist.v -of_objects [get_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
+add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_sim_netlist.v -of_objects [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
 
-add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_sim_netlist.vhdl -of_objects [get_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
+add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom_sim_netlist.vhdl -of_objects [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
 
-add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom.dcp -of_objects [get_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
+add_files D:/code/MIPS-Experiment/minimips/minimips.runs/irom_synth_1/irom.dcp -of_objects [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci]
 
 if {[file isdir D:/code/MIPS-Experiment/minimips/minimips.ip_user_files/ip/irom]} {
   catch { 

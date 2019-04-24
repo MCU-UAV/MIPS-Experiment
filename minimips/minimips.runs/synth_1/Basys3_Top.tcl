@@ -28,7 +28,7 @@ set_property parent.project_path D:/code/MIPS-Experiment/minimips/minimips.xpr [
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_cache_permissions disable [current_project]
-add_files d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom.coe
+add_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom.coe
 read_verilog D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/defines.v
 set_property file_type "Verilog Header" [get_files D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/defines.v]
 read_verilog -library xil_defaultlib {
@@ -46,7 +46,7 @@ read_verilog -library xil_defaultlib {
   D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/miniMIPS_Top.v
   D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/imports/src/Basys3_Top.v
 }
-read_ip -quiet d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
+read_ip -quiet D:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom.xci
 set_property used_in_implementation false [get_files -all d:/code/MIPS-Experiment/minimips/minimips.srcs/sources_1/ip/irom/irom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
