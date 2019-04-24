@@ -44,7 +44,7 @@ module ID
     output reg          br_flag,    // branch flag
     output reg  [31: 0] br_addr,    // branch address
 
-    output wire         stallreq    // use to requre the pipeline stall, you can use it
+    output reg         stallreq    // use to requre the pipeline stall, you can use it
 );
 
     wire [ 5: 0] opcode    = inst[31:26];
@@ -332,4 +332,16 @@ module ID
 	   end
     end
     
+    always @(*) begin
+       if ((r1read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r1addr)||(r1read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r1addr))begin
+            stallreq<=1'b1;
+       end
+    end
+    
+    always @(*) begin
+       if ((r2read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r1addr)||(r2read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r1addr))begin
+            stallreq<=1'b1;
+       end
+    end
+
 endmodule

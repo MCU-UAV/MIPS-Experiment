@@ -156,6 +156,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/ctrl.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/src/miniMIPS_Top.v">
         <FileInfo RelPath="miniMIPS_Top.v">
           <Attr Name="ImportPath" Val="$PPRDIR/../../../工作/体系结构/体系结构实验/7 minimipsb3/miniMIPS_B3.srcs/sources_1/src/miniMIPS_Top.v"/>

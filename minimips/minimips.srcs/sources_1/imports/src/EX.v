@@ -27,7 +27,8 @@ module EX
 
     output reg          m_wen,      // data write to mem enable
     output reg  [31: 0] m_addr,     // data write to mem address
-    output reg  [31: 0] m_dout      // data out to mem
+    output reg  [31: 0] m_dout,      // data out to mem
+    output reg          stallreq
 );
 
     wire [31: 0] abs_opr1 = opr1[31] ? ~opr1 + 32'd1 : opr1;
@@ -57,7 +58,7 @@ module EX
         m_wen   <= 1'b0;
         m_addr  <= 32'b0;
         m_dout  <= 32'b0;
-
+        stallreq<= 1'b0;
         case (aluop)
             `ALU_LW: begin
                 m_addr  <= sl_addr;

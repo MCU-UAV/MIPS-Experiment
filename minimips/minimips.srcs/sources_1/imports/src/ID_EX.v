@@ -26,6 +26,8 @@ module ID_EX
     input  wire [31: 0] id_offset,
     input  wire         id_wreg,
     input  wire [ 4: 0] id_wraddr,
+    
+    input  wire [ 5: 0] stall,
 
     output reg  [31: 0] ex_pc,
     output reg  [ 3: 0] ex_aluop,   // alu type, to EX seg
@@ -46,7 +48,16 @@ module ID_EX
             ex_wreg    <= 1'b0;
             ex_wraddr  <= 5'b0;
         end
-        else begin
+        else if (stall[2]==1'b1&&stall[3]==1'b0) begin
+            ex_pc      <= 32'b0;
+            ex_aluop   <= 4'h0;
+            ex_opr1    <= 32'b0;
+            ex_opr2    <= 32'b0;
+            ex_offset  <= 32'b0;
+            ex_wreg    <= 1'b0;
+            ex_wraddr  <= 5'b0;
+        end
+        else if (stall[2]==1'b0) begin
             ex_pc      <= id_pc;
             ex_aluop   <= id_aluop;
             ex_opr1    <= id_opr1;
