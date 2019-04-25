@@ -26,7 +26,7 @@ module PC
 
     always @(posedge clk, posedge rst) begin
         if(rst) begin
-            pc   <= 32'b0;
+            pc   <= 32'hFFFFFFFC;
         end
         else if(stall[0]==1'b0) begin
             if(br_flag) pc <= br_addr;

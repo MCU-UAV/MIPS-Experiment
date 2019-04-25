@@ -54,7 +54,7 @@ module EX_MEM
             mem_m_dout  <= 32'b0;
             mem_wreg    <= 1'b0;
             mem_wraddr  <= 5'b0;
-        end else if (stall[3] == 1'b0) begin
+        end else if (stall[4] == 1'b0) begin
             mem_aluop   <= ex_aluop;
             mem_alures  <= ex_alures;
             mem_m_wen   <= ex_m_wen;

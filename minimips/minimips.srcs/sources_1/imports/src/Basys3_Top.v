@@ -50,7 +50,15 @@ module Basys3_Top
         .a      ( inst_addr [11:2]  ),
         .spo    ( inst_data         )
     );
-
+    iram ram
+    (
+        .clk        ( clk           ),
+        .we         ( data_wen      ),
+        .a          ( data_addr [11:2]),
+        .d          ( data_dout     ),
+        .spo        ( data_din      )
+    );
+    /*
     confreg ram
     (
         .clk        ( clk           ),
@@ -64,6 +72,6 @@ module Basys3_Top
         .led        ( led           ),
         .ca         ( ca            ),
         .an         ( an            )
-    );
+    );*/
 
 endmodule
