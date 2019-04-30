@@ -23,16 +23,29 @@ module EX
     input  wire [31: 0] opr1,
     input  wire [31: 0] opr2,
     input  wire [31: 0] offset,
+    
+    input  wire         ex_wreg_i,
+    output reg          ex_wreg_o,
+    
+    input  wire [ 4: 0] ex_wraddr_i,
+    output reg  [ 4: 0] ex_wraddr_o,
+    
     output reg  [31: 0] alures,
 
     output reg          m_wen,      // data write to mem enable
     output reg  [31: 0] m_addr,     // data write to mem address
-    output reg  [31: 0] m_dout      // data out to mem
+    output reg  [31: 0] m_dout,      // data out to mem
+    output reg          stallreq
 );
 
     wire [31: 0] abs_opr1 = opr1[31] ? ~opr1 + 32'd1 : opr1;
     wire [31: 0] abs_opr2 = opr2[31] ? ~opr2 + 32'd1 : opr2;
 
+    always @(*) begin
+        ex_wreg_o <= ex_wreg_i;
+        ex_wraddr_o<=ex_wraddr_i;
+    end
+    
     always @(*) begin
         case (aluop)
             `ALU_SLL:  alures <= opr2 << opr1[4:0];
@@ -57,10 +70,11 @@ module EX
         m_wen   <= 1'b0;
         m_addr  <= 32'b0;
         m_dout  <= 32'b0;
-
+        stallreq<= 1'b0;
         case (aluop)
             `ALU_LW: begin
                 m_addr  <= sl_addr;
+                stallreq<=1'b1;
             end
 
             `ALU_SW:  begin

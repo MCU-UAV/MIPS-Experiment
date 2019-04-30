@@ -27,7 +27,7 @@ module simu();
         switch = 0;
         keys   = 0;
 
-        #100
+        #50
         reset  = 0;
         switch = 16'd3;
     end

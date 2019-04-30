@@ -44,7 +44,7 @@ module ID
     output reg          br_flag,    // branch flag
     output reg  [31: 0] br_addr,    // branch address
 
-    output wire         stallreq    // use to requre the pipeline stall, you can use it
+    output reg         stallreq    // use to requre the pipeline stall, you can use it
 );
 
     wire [ 5: 0] opcode    = inst[31:26];
@@ -81,6 +81,7 @@ module ID
         ext_imme  <= 32'b0;
         br_flag   <= 1'b0;
         br_addr   <= 32'b0;
+        stallreq <= 1'b0;
 
         case (opcode)
             `OP_OPECIAL: begin
@@ -294,6 +295,7 @@ module ID
                 r1read    <= 1'b1;
                 wreg      <= 1'b1;
                 wraddr    <= rt;
+                stallreq  <= 1'b1;
             end
 
             `OP_SW: begin
@@ -314,7 +316,7 @@ module ID
 	   end else if(r1read == 1'b0) begin
 	  	    opr1<= ext_imme;
 	   end else begin
-	        opr1= `ZeroWord;
+	        opr1= 32'b0;
 	   end
     end
 
@@ -332,4 +334,16 @@ module ID
 	   end
     end
     
+    /*always @(*) begin
+       if ((r1read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r1addr)||(r1read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r1addr))begin
+            stallreq<=1'b1;
+       end
+    end
+    
+    always @(*) begin
+       if ((r2read==1'b1)&&(ex_wreg_i==1'b1)&&(ex_wd_i==r1addr)||(r2read==1'b1)&&(mem_wreg_i==1'b1)&&(mem_wd_i==r1addr))begin
+            stallreq<=1'b1;
+       end
+    end*/
+
 endmodule

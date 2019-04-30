@@ -26,6 +26,8 @@ module EX_MEM
     input  wire         ex_wreg,
     input  wire [ 4: 0] ex_wraddr,
     
+    input  wire [ 5: 0] stall,
+    
     output reg  [ 3: 0] mem_aluop, 
     output reg  [31: 0] mem_alures,
     output reg          mem_m_wen,      // write mem enable signal, to MEM seg
@@ -44,8 +46,15 @@ module EX_MEM
             mem_m_dout  <= 32'b0;
             mem_wreg    <= 1'b0;
             mem_wraddr  <= 5'b0;
-        end
-        else begin
+        end else if(stall[3] == 1'b1 && stall[4] == 1'b0) begin
+            mem_aluop   <= 4'h0;
+            mem_alures  <= 32'b0;
+            mem_m_wen   <= 1'b0;
+            mem_m_addr  <= 32'b0;
+            mem_m_dout  <= 32'b0;
+            mem_wreg    <= 1'b0;
+            mem_wraddr  <= 5'b0;
+        end else if (stall[4] == 1'b0) begin
             mem_aluop   <= ex_aluop;
             mem_alures  <= ex_alures;
             mem_m_wen   <= ex_m_wen;

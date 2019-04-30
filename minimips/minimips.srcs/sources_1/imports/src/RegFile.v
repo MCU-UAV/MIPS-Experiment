@@ -43,7 +43,7 @@ module RegFile
     end
     
     always @(*)begin
-        if(rst== 1'b0) begin    //复位状态只能读出0
+        if(rst== 1'b1) begin    //复位状态只能读出0
             r1data<=32'b0;
         end else if(r1addr==5'b0) begin//读0号寄存器只能读出0
             r1data<=32'b0;
@@ -53,7 +53,7 @@ module RegFile
     end
     
     always @(*)begin
-        if(rst== 1'b0) begin    //复位状态只能读出0
+        if(rst== 1'b1) begin    //复位状态只能读出0
             r2data<=32'b0;
         end else if(r2addr==5'b0) begin//读0号寄存器只能读出0
             r2data<=32'b0;

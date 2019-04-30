@@ -85,6 +85,27 @@ module miniMIPS_Top
 
     wire         wb_wreg_o;
     wire [ 4: 0] wb_wraddr_o;
+    
+    wire         stallreq_from_id;
+    wire         stallreq_from_ex;
+    wire [ 5: 0] stall;
+    
+    wire ex_wreg_i;
+    assign ex_wreg_i=ex_wreg;
+    wire ex_wreg_o;
+    
+    wire [4:0]ex_wraddr_i;
+    assign ex_wraddr_i=ex_wraddr;
+    wire [4:0]ex_wraddr_o;
+    
+    ctrl ctrl
+    (
+        .clk(clk),
+        .rst(rst),
+        .stallreq_from_id(stallreq_from_id),
+        .stallreq_from_ex(stallreq_from_ex),
+        .stall(stall)
+    );
 
     // IF stage
     PC pc
@@ -93,7 +114,8 @@ module miniMIPS_Top
         .rst        ( rst       ),
         .br_flag    ( br_flag   ),
         .br_addr    ( br_addr   ),
-        .pc         ( if_pc     )
+        .pc         ( if_pc     ),
+        .stall      ( stall     )
     );
 
     assign inst_addr = if_pc;
@@ -108,7 +130,9 @@ module miniMIPS_Top
         .if_inst    ( if_inst   ),
 
         .id_pc      ( id_pc     ),
-        .id_inst    ( id_inst   )
+        .id_inst    ( id_inst   ),
+        
+        .stall      ( stall     )
     );
 
     // ID stage
@@ -129,13 +153,13 @@ module miniMIPS_Top
         .br_flag    ( br_flag   ),
         .br_addr    ( br_addr   ),
         
-        .ex_wreg_i  ( ex_wreg   ),
-        .ex_wd_i    ( ex_wraddr ),
+        .ex_wreg_i  ( ex_wreg_o   ),
+        .ex_wd_i    ( ex_wraddr_o ),
         .ex_wdata_i ( ex_alures ),
         .mem_wreg_i ( mem_wreg_o),
         .mem_wd_i   ( mem_wraddr_o),
-        .mem_wdata_i( mem_m_din_o)
-        // .stallreq
+        .mem_wdata_i( mem_m_din_o),
+        .stallreq   ( stallreq_from_id)
     );
 
     RegFile rf
@@ -170,9 +194,12 @@ module miniMIPS_Top
         .ex_opr2    ( ex_opr2   ),
         .ex_offset  ( ex_offset ),
         .ex_wreg    ( ex_wreg   ),
-        .ex_wraddr  ( ex_wraddr )
+        .ex_wraddr  ( ex_wraddr ),
+        
+        .stall      ( stall     )
     );
-
+    
+    
     //EX stage
     EX ex 
     (
@@ -184,8 +211,14 @@ module miniMIPS_Top
         .alures     ( ex_alures ),
         .m_wen      ( ex_m_wen  ),
         .m_addr     ( ex_m_addr ),
-        .m_dout     ( ex_m_dout )
+        .m_dout     ( ex_m_dout ),
+        .stallreq   ( stallreq_from_ex),
+        .ex_wreg_i  (ex_wreg_i),
+        .ex_wreg_o  (ex_wreg_o),
+        .ex_wraddr_i(ex_wraddr_i),
+        .ex_wraddr_o(ex_wraddr_o)
     );
+    
 
     //EX_MEM
     EX_MEM ex_mem ( 
@@ -197,8 +230,10 @@ module miniMIPS_Top
         .ex_m_wen   ( ex_m_wen      ),
         .ex_m_addr  ( ex_m_addr     ),
         .ex_m_dout  ( ex_m_dout     ),
-        .ex_wreg    ( ex_wreg       ),
+        .ex_wreg    ( ex_wreg_o       ),
         .ex_wraddr  ( ex_wraddr     ),
+        
+        .stall      ( stall         ),
         
         .mem_aluop  ( mem_aluop     ),
         .mem_alures ( mem_alures    ),
@@ -244,6 +279,8 @@ module miniMIPS_Top
         .mem_m_din  ( mem_m_din_o   ),
         .mem_wreg   ( mem_wreg_o    ),
         .mem_wraddr ( mem_wraddr_o  ),
+        
+        .stall      ( stall         ),
 
         .wb_aluop   ( wb_aluop      ),
         .wb_alures  ( wb_alures     ),
@@ -259,6 +296,7 @@ module miniMIPS_Top
         .m_din_i    ( wb_m_din      ),
         .wreg_i     ( wb_wreg       ),
         .wraddr_i   ( wb_wraddr     ),
+        
 
         .wreg_o     ( wb_wreg_o     ),
         .wraddr_o   ( wb_wraddr_o   ),

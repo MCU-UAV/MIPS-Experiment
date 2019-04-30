@@ -21,6 +21,8 @@ module IF_ID
 
     input  wire [31: 0] if_pc,
     input  wire [31: 0] if_inst,
+    
+    input wire  [ 5: 0] stall,
 
     output reg  [31: 0] id_pc,      // pc, to ID seg
     output reg  [31: 0] id_inst     // instruction, to ID seg
@@ -31,10 +33,13 @@ module IF_ID
             id_pc   <= 32'b0;
             id_inst <= 32'b0;
         end
-        else begin
+        else if(stall[1]==1'b1&&stall[2]==1'b0) begin
+            id_pc   <= 32'b0;
+            id_inst <= 32'b0;
+        end else if (stall[1]==1'b0) begin
             id_pc   <= if_pc;
             id_inst <= if_inst;
         end
     end
-
+    
 endmodule

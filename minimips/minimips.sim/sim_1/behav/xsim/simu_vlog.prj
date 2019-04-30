@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../minimips.srcs/sources_1/imports/src" \
+"../../../../minimips.ip_user_files/ip/iram/sim/iram.v" \
 "../../../../minimips.ip_user_files/ip/irom/sim/irom.v" \
 "../../../../minimips.srcs/sources_1/imports/src/Basys3_Top.v" \
 "../../../../minimips.srcs/sources_1/imports/src/EX.v" \
@@ -12,7 +13,7 @@ verilog xil_defaultlib  --include "../../../../minimips.srcs/sources_1/imports/s
 "../../../../minimips.srcs/sources_1/imports/src/PC.v" \
 "../../../../minimips.srcs/sources_1/imports/src/RegFile.v" \
 "../../../../minimips.srcs/sources_1/imports/src/WB.v" \
-"../../../../minimips.srcs/sources_1/imports/src/confreg.v" \
+"../../../../minimips.srcs/sources_1/new/ctrl.v" \
 "../../../../minimips.srcs/sources_1/imports/src/miniMIPS_Top.v" \
 "../../../../minimips.srcs/sim_1/imports/new/simu.v" \
 

@@ -24,6 +24,8 @@ module MEM_WB
     input  wire [31: 0] mem_m_din,
     input  wire         mem_wreg,
     input  wire [ 4: 0] mem_wraddr,
+    
+    input  wire [ 5: 0] stall,
 
     output reg  [ 3: 0] wb_aluop, 
     output reg  [31: 0] wb_alures,
@@ -39,8 +41,13 @@ module MEM_WB
             wb_m_din  <= 32'b0;
             wb_wreg   <= 1'b0;
             wb_wraddr <= 5'b0;
-        end
-        else begin
+        end else if(stall[4] == 1'b1 && stall[5] == 1'b0) begin
+         wb_aluop  <= 4'h0;
+            wb_alures <= 32'b0;
+            wb_m_din  <= 32'b0;
+            wb_wreg   <= 1'b0;
+            wb_wraddr <= 5'b0;
+        end else if(stall[4] == 1'b0) begin
             wb_aluop  <= mem_aluop;
             wb_alures <= mem_alures;
             wb_m_din  <= mem_m_din;

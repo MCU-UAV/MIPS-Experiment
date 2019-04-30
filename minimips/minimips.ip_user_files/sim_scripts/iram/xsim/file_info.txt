@@ -1,0 +1,2 @@
+iram.v,verilog,xil_defaultlib,../../../ip/iram/sim/iram.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
