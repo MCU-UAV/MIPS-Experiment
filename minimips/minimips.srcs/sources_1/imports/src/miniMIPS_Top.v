@@ -103,7 +103,6 @@ module miniMIPS_Top
         .clk(clk),
         .rst(rst),
         .stallreq_from_id(stallreq_from_id),
-        .stallreq_from_ex(stallreq_from_ex),
         .stall(stall)
     );
 
@@ -212,7 +211,6 @@ module miniMIPS_Top
         .m_wen      ( ex_m_wen  ),
         .m_addr     ( ex_m_addr ),
         .m_dout     ( ex_m_dout ),
-        .stallreq   ( stallreq_from_ex),
         .ex_wreg_i  (ex_wreg_i),
         .ex_wreg_o  (ex_wreg_o),
         .ex_wraddr_i(ex_wraddr_i),

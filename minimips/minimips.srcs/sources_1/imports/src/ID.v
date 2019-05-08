@@ -21,13 +21,13 @@ module ID
     input  wire [31: 0] pc,         // use to find the Exceptions, you can use it
     input  wire [31: 0] inst,       // instruction
     
-    input  wire         ex_wreg_i,
-    input  wire [ 4: 0] ex_wd_i,
-    input  wire [31: 0] ex_wdata_i,
+    input  wire         ex_wreg_i,  //EX¶ÎÖ¸ÁîÊÇ·ñĞ´¼Ä´æÆ÷
+    input  wire [ 4: 0] ex_wd_i,    //EX¶ÎÖ¸ÁîĞ´¼Ä´æÆ÷µÄµØÖ·
+    input  wire [31: 0] ex_wdata_i, //EX¶ÎÖ¸ÁîĞ´¼Ä´æÆ÷µÄÊı¾İ
     
-    input  wire         mem_wreg_i,
-    input  wire [ 4: 0] mem_wd_i,
-    input  wire [31: 0] mem_wdata_i,
+    input  wire         mem_wreg_i, //MEM¶ÎÖ¸ÁîÊÇ·ñĞ´¼Ä´æÆ÷
+    input  wire [ 4: 0] mem_wd_i,   //MEM¶ÎÖ¸ÁîĞ´¼Ä´æÆ÷µÄµØÖ·
+    input  wire [31: 0] mem_wdata_i,//MEM¶ÎÖ¸ÁîĞ´¼Ä´æÆ÷µÄÊı¾İ
 
     output reg  [ 4: 0] r1addr,     // default rs
     input  wire [31: 0] r1data,
